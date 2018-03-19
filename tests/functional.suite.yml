@@ -1,0 +1,9 @@
+actor: FunctionalTester
+modules:
+    enabled:
+        - \Helper\Functional
+        - \Svycka\Codeception\Module\ZendExpressive:
+            container: config/container.php
+            app_dir: tests/_data/app/
+        - REST:
+            depends: \Svycka\Codeception\Module\ZendExpressive
