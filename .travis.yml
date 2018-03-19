@@ -1,0 +1,28 @@
+sudo: false
+language: php
+
+php:
+  - 7.1
+  - 7.2
+  - nightly
+
+before_install:
+  - composer self-update
+
+install:
+  - travis_retry composer install --no-interaction --ignore-platform-reqs --prefer-source --no-scripts
+
+script:
+  - composer check-style
+  - composer test
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache

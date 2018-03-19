@@ -9,20 +9,7 @@
 
 **Note:** Replace ```Vytautas Stankus``` ```svycka``` ```https://github.com/svycka``` ```svycka@gmail.com``` ```svycka``` ```codeception-zend-expressive-module``` ```Codeception Module for Zend Expressive 3 Framework``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
+This module allows you to run tests inside Zend Expressive 3 framework.
 
 
 ## Install
@@ -35,9 +22,14 @@ $ composer require svycka/codeception-zend-expressive-module
 
 ## Usage
 
-``` php
-$skeleton = new svycka\codeception-zend-expressive-module();
-echo $skeleton->echoPhrase('Hello, League!');
+Put this in your `codeception.yml`
+``` yml
+modules:
+  config:
+    \Svycka\Codeception\Module\ZendExpressive:
+      container: path/to/container.php
+    REST:
+      depends: \Svycka\Codeception\Module\ZendExpressive
 ```
 
 ## Change log
