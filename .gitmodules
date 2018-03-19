@@ -1,3 +1,4 @@
 [submodule "REST"]
 	path = tests/functional/REST
 	url = https://github.com/Naktibalda/codeception-rest-testcase
+	branch = master
