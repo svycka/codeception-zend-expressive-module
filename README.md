@@ -30,6 +30,13 @@ modules:
       depends: \Svycka\Codeception\Module\ZendExpressive
 ```
 
+### Available options
+
+ * `container` - relative path to file which returns Container (default: `config/container.php`)
+ * `pipeline` - relative path to file which returns pipeline config (default: `config/pipeline.php`)
+ * `routes` - relative path to file which returns routes config (default: `config/routes.php`)
+ * `orm_service` - the service name for `Doctrine\ORM\EntityManager` within container (default: `doctrine.entity_manager.orm_default`)
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
