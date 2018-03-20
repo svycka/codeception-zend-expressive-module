@@ -62,7 +62,7 @@ final class ZendExpressive extends Framework implements DoctrineProvider
         $app = $this->container->get('Zend\Expressive\Application');
         $factory = $this->container->get(\Zend\Expressive\MiddlewareFactory::class);
 
-        $pipelineFile = $projectDir . $this->config['pipelines'];
+        $pipelineFile = $projectDir . $this->config['pipeline'];
         if (file_exists($pipelineFile)) {
             (require $pipelineFile)($app, $factory, $this->container);
         }

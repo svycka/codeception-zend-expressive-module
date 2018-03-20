@@ -13,7 +13,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 ### Fixed
-- Nothing
+- Fixed typo in config with caused undefined `pipelines` option
 
 ### Removed
 - Nothing
