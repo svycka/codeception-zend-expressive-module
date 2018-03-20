@@ -7,8 +7,6 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```Vytautas Stankus``` ```svycka``` ```https://github.com/svycka``` ```svycka@gmail.com``` ```svycka``` ```codeception-zend-expressive-module``` ```Codeception Module for Zend Expressive 3 Framework``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
-
 This module allows you to run tests inside Zend Expressive 3 framework.
 
 

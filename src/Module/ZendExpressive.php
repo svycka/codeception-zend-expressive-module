@@ -16,6 +16,8 @@ use Codeception\Lib\Interfaces\DoctrineProvider;
  * ## Config
  *
  * * container: relative path to file which returns Container (default: `config/container.php`)
+ * * pipeline: relative path to file which returns pipeline config (default: `config/pipeline.php`)
+ * * routes: relative path to file which returns routes config (default: `config/routes.php`)
  * * orm_service: the service name for `Doctrine\ORM\EntityManager` within container (default: `doctrine.entity_manager.orm_default`)
  *
  * ## API
@@ -29,8 +31,9 @@ final class ZendExpressive extends Framework implements DoctrineProvider
 {
     protected $config = [
         'container' => 'config/container.php',
+        'pipeline' => 'config/pipeline.php',
+        'routes' => 'config/routes.php',
         'orm_service' => 'doctrine.entity_manager.orm_default',
-        'app_dir' => '',
     ];
 
     /**
@@ -53,17 +56,17 @@ final class ZendExpressive extends Framework implements DoctrineProvider
     public function _initialize() : void
     {
         $cwd = getcwd();
-        $projectDir = Configuration::projectDir() . $this->config['app_dir'];
+        $projectDir = Configuration::projectDir();
         chdir($projectDir);
         $this->container = require $projectDir . $this->config['container'];
         $app = $this->container->get('Zend\Expressive\Application');
         $factory = $this->container->get(\Zend\Expressive\MiddlewareFactory::class);
 
-        $pipelineFile = $projectDir . 'config/pipeline.php';
+        $pipelineFile = $projectDir . $this->config['pipelines'];
         if (file_exists($pipelineFile)) {
             (require $pipelineFile)($app, $factory, $this->container);
         }
-        $routesFile = $projectDir . 'config/routes.php';
+        $routesFile = $projectDir . $this->config['routes'];
         if (file_exists($routesFile)) {
             (require $routesFile)($app, $factory, $this->container);
         }
