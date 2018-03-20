@@ -4,7 +4,7 @@ modules:
         - \Helper\Functional
         - \Svycka\Codeception\Module\ZendExpressive:
             container: tests/_data/app/config/container.php
-            pipelines: tests/_data/app/config/pipeline.php
+            pipeline: tests/_data/app/config/pipeline.php
             routes: tests/_data/app/config/routes.php
         - REST:
             depends: \Svycka\Codeception\Module\ZendExpressive
