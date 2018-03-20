@@ -4,7 +4,7 @@ All notable changes to `codeception-zend-expressive-module` will be documented i
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
+## 1.0.0 - 2018-03-20
 
 ### Added
 - Added `pipeline` and `routes` config options.
